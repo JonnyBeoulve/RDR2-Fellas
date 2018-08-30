@@ -1,0 +1,54 @@
+/*=======================================================================
+// General styling.
+=======================================================================*/
+a {
+    color: black;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 4.16667%;
+}
+
+/*=======================================================================
+// Navigation bar styling.
+=======================================================================*/
+nav {
+    position: relative;
+    background: black;
+    overflow: hidden;
+    margin: 0;
+    padding: 10px 0 6px;
+    z-index: 0;
+}
+
+nav a {
+    padding: 20px 10px;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover {
+    color: #d41936;
+    text-decoration: none;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    color: white;
+}
+
+.navbar-sub-brand {
+    margin: 10px;
+    max-width: 200px;
+    font-size: 0.8em;
+    color: #d41936;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+}
