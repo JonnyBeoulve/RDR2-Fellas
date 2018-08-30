@@ -11,6 +11,11 @@ a {
     padding: 0 4.16667%;
 }
 
+body {
+    background-color: #e3e3e3;
+    font-family: "Rye", sans-serif;
+}
+
 /*=======================================================================
 // Navigation bar styling.
 =======================================================================*/
@@ -20,6 +25,7 @@ nav {
     overflow: hidden;
     margin: 0;
     padding: 10px 0 6px;
+    border-bottom: 1px solid #CFE3DC;
     z-index: 0;
 }
 
@@ -35,12 +41,12 @@ nav a:hover {
 }
 
 .navbar-brand {
-    font-size: 2em;
+    font-size: 2.2em;
     color: white;
 }
 
 .navbar-sub-brand {
-    margin: 10px;
+    margin: 15px;
     max-width: 200px;
     font-size: 0.8em;
     color: #d41936;
@@ -56,11 +62,19 @@ nav a:hover {
 /*=======================================================================
 // Banner styling.
 =======================================================================*/
+.container-banner {
+    margin: 0 auto;
+    width: 100%;
+}
+
 .banner {
+    min-height: 70vh;
+    width: 100%;
     padding: 100px 0 100px 0;
-    background: white;
     text-align: center;
     border-bottom: 1px solid #CFE3DC;
+    background-image: url("../img/home-screenshot.jpg");
+    background-size: cover;
 }
 
 .banner-text {
@@ -75,10 +89,10 @@ nav a:hover {
 // Footer styling.
 =======================================================================*/
 footer {
-    height: 200px;
+    height: 300px;
     background-color: #7e1921;
     color: white;
-    line-height: 200px;
+    line-height: 300px;
     text-align: center;
 }
 
