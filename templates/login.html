@@ -1,21 +1,26 @@
 {% extends 'base.html' %}
 {% block body_block %}
   <div class="container">
-    <div class="jumbotron">
-      <h1>Login</h1>
+    <div class="form-div">
+      <h1 class="page-title">Login</h1>
         <form method="post" action="{% url 'login' %}">
           {% csrf_token %}
-          
-          <label for="email">Email:</label>
-          <input type="text" name="email" placeholder="E-Mail">
 
+          <label for="email">Email:</label>
+          <br />
+          <input type="text" name="email">
+
+          <br />
           <label for="password">Password:</label>
+          <br />
           <input type="password" name="password">
 
-          <input type="submit" name="" value="Login">
+          <br />
+          <input class="btn btn-danger btn-lg" type="submit" value="Login">
 
         </form>
 
-    </div>
+        <p>New around these parts? Register <a href="/register" class="text-link">here</a>.</p>
+      </div>
   </div>
 {% endblock %}
