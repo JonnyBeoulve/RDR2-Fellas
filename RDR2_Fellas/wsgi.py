@@ -1,5 +1,5 @@
 """
-WSGI config for RDR2_Fellas project.
+WSGI config for rdr2_fellas project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'RDR2_Fellas.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'rdr2_fellas.settings')
 
 application = get_wsgi_application()
