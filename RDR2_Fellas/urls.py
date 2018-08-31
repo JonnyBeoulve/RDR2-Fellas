@@ -15,10 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from users import views
+from rdr2_fellas import views
 
+# Namespace
+app_name = 'rdr2_fellas'
+
+# URL structure
 urlpatterns = [
     path('', views.home, name='home'),
-    path('login/', views.login, name='login'),
-    path('admin/', admin.site.urls),
+    path('login/', views.user_login, name='login'),
+    path('register/', views.user_register, name='register'),
 ]
