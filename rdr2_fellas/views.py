@@ -49,8 +49,29 @@ def user_register(request):
 
     if request.method == 'POST':
 
-        # Coming soon...
-        print('Working')
+        # Grab form data
+        user_form = UserForm(data=request.POST)
+        profile_form = UserProfileInfoForm(data=request.POST)
+
+        # Confirm form validity
+        if user_form.is_valid() and profile_form.is_valid():
+
+            # Set user, hash password, and then save to database
+            user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+
+            # Set profile, create relationship, then save to database
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            profile.save()
+
+            # User is now registered.
+            registered = True
+
+        else:
+            # Print form invalid
+            print(user_form.errors, profile_form.errors)
 
     else:
         # Render forms
