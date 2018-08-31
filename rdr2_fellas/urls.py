@@ -23,6 +23,8 @@ app_name = 'rdr2_fellas'
 # URL structure
 urlpatterns = [
     path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('partner/', views.partner, name='partner'),
     path('login/', views.user_login, name='login'),
     path('register/', views.user_register, name='register'),
 ]

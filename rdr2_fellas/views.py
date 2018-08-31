@@ -9,6 +9,14 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request,'index.html')
 
+# About page
+def about(request):
+    return render(request, 'about.html')
+
+# Partner up page
+def partner(request):
+    return render(request, 'partner.html')
+
 # Process login request / render login page
 def user_login(request):
 

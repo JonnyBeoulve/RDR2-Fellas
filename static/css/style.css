@@ -2,12 +2,12 @@
 // High level styling.
 =======================================================================*/
 a {
-    color: black;
+    color: #000009;
     text-decoration: none;
 }
 
 a:hover {
-    color: black;
+    color: #000009;
     text-decoration: none;
 }
 
@@ -22,13 +22,13 @@ body {
     font-family: "Rye", sans-serif;
 }
 
+textarea {
+    resize: vertical;
+}
+
 /*=======================================================================
 // Common styling.
 =======================================================================*/
-label {
-    padding: 15px 0 15px 0;
-}
-
 .btn {
     margin: 20px 0 20px 0;
     color: white;
@@ -47,7 +47,7 @@ label {
 =======================================================================*/
 nav {
     position: relative;
-    background: black;
+    background: #000009;
     overflow: hidden;
     margin: 0;
     padding: 10px 0 6px;
@@ -67,8 +67,8 @@ nav a:hover {
 }
 
 .navbar-brand {
-    padding-left: 0;
-    font-size: 2.2em;
+    padding: 10px 0 0 0;
+    font-size: 2.4em;
     color: white;
 
     -webkit-user-select: none;   
@@ -78,7 +78,7 @@ nav a:hover {
 }
 
 .navbar-sub-brand {
-    margin: 15px;
+    padding: 20px 0 0 0;
     max-width: 200px;
     font-size: 0.8em;
     color: #d41936;
@@ -147,15 +147,50 @@ footer a {
 }
 
 footer a:hover {
-    color: black;
+    color: #000009;
     text-decoration: none;
+}
+
+/*=======================================================================
+// About styling.
+=======================================================================*/
+.about {
+    min-height: 70vh;
+    width: 100%;
+    padding: 100px 0 100px 0;
+    text-align: center;
+    border-bottom: 1px solid #CFE3DC;
+    background-size: cover;
 }
 
 /*=======================================================================
 // Login and registration styling.
 =======================================================================*/
+label, input {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 0 5px 0;
+}
+
 .form-div {
     min-height: 50vh;
+    max-width: 380px;
     margin: 70px auto 70px;
     text-align: center;
+}
+
+.form-div input {
+    width: 100%;
+    height: 40px;
+}
+
+.form-div textarea {
+    border:1px solid #999999;
+    width:98%;
+    margin:5px 0;
+    padding:1%;
+}
+
+.helptext {
+    font-size: 0.6em;
 }
