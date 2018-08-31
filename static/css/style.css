@@ -42,6 +42,10 @@ textarea {
     color: #7e1921;
 }
 
+.page-title {
+    margin: 0 0 20px 0;
+}
+
 /*=======================================================================
 // Navigation bar styling.
 =======================================================================*/
@@ -177,6 +181,10 @@ label, input {
     max-width: 380px;
     margin: 70px auto 70px;
     text-align: center;
+}
+
+form p {
+    padding: 10px 0 10px 0;
 }
 
 .form-div input {
