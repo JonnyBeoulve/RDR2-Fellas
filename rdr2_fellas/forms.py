@@ -14,8 +14,7 @@ class UserForm(forms.ModelForm):
 class UserProfileForm(forms.ModelForm):
     class Meta():
         model = UserProfile
-        fields = ('platform', 'gaming_id', 'message')
+        fields = ('gaming_id', 'platform', 'gamerstyle', 'playstyle', 'message')
         help_texts = {
-            'platform': 'What platform do you play on?',
-            'gaming_id': 'Share your PlayStation or Xbox ID here.'
+            'gaming_id': 'Share your PSN ID or Xbox Gamertag here.'
         }

@@ -51,7 +51,7 @@ def user_register(request):
 
         # Grab form data
         user_form = UserForm(data=request.POST)
-        profile_form = UserProfileInfoForm(data=request.POST)
+        profile_form = UserProfileForm(data=request.POST)
 
         # Confirm form validity
         if user_form.is_valid() and profile_form.is_valid():

@@ -184,6 +184,11 @@ label, input {
     height: 40px;
 }
 
+.form-div select {
+    width: 100%;
+    height: 40px;
+}
+
 .form-div textarea {
     border:1px solid #999999;
     width:98%;
@@ -193,4 +198,10 @@ label, input {
 
 .helptext {
     font-size: 0.6em;
+}
+
+.errorlist {
+    list-style-type: none;
+    padding-left: 0;
+    color: #d41936;
 }
