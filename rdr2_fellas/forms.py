@@ -20,6 +20,10 @@ class UserForm(forms.ModelForm):
             raise forms.ValidationError(
                 "Both passwords don't match!"
             )
+        elif len(password) < 6:
+            raise forms.ValidationError(
+                'Password must be at least 6 characters in length!'
+                )
 
 # Optional information for user profile
 class UserProfileForm(forms.ModelForm):

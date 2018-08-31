@@ -31,7 +31,7 @@ textarea {
 =======================================================================*/
 .btn {
     margin: 20px 0 20px 0;
-    color: white;
+    color: #e3e3e3;
 }
 
 .text-link {
@@ -55,14 +55,14 @@ nav {
     overflow: hidden;
     margin: 0;
     padding: 10px 0 6px;
-    border-bottom: 1px solid #CFE3DC;
+    border-bottom: 1px solid #e3e3e3;
     z-index: 0;
 }
 
 nav a {
     padding: 20px 10px;
     text-decoration: none;
-    color: white;
+    color: #e3e3e3;
 }
 
 nav a:hover {
@@ -73,7 +73,7 @@ nav a:hover {
 .navbar-brand {
     padding: 10px 0 0 0;
     font-size: 2.4em;
-    color: white;
+    color: #e3e3e3;
 
     -webkit-user-select: none;   
     -moz-user-select: none;
@@ -122,16 +122,16 @@ nav a:hover {
     display: block;
     margin: 0 auto;
     padding: 0 0 20px 0;
-    color: #d41936;
+    color: #e3e3e3;
     max-width: 600px;
 }
 
 .banner-button {
-    color: white;
+    color: #e3e3e3;
 }
 
 .banner-button:hover {
-    color: white;
+    color: #e3e3e3;
 }
 
 /*=======================================================================
@@ -140,13 +140,13 @@ nav a:hover {
 footer {
     height: 300px;
     background-color: #7e1921;
-    color: white;
+    color: #e3e3e3;
     line-height: 300px;
     text-align: center;
 }
 
 footer a {
-    color: white;
+    color: #e3e3e3;
     text-decoration: none;
 }
 
