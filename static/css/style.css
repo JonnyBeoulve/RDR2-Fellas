@@ -109,9 +109,9 @@ nav a:hover {
 }
 
 .banner {
-    min-height: 70vh;
+    min-height: 90vh;
     width: 100%;
-    padding: 100px 0 100px 0;
+    padding: 30vh 0 30vh 0;
     text-align: center;
     border-bottom: 1px solid #CFE3DC;
     background-image: url("../img/home-screenshot.jpg");
@@ -123,7 +123,8 @@ nav a:hover {
     margin: 0 auto;
     padding: 0 0 20px 0;
     color: #e3e3e3;
-    max-width: 600px;
+    font-size: 3em;
+    max-width: 800px;
 }
 
 .banner-button {
@@ -165,6 +166,18 @@ footer a:hover {
     text-align: center;
     border-bottom: 1px solid #CFE3DC;
     background-size: cover;
+}
+
+/*=======================================================================
+// Partner Up styling.
+=======================================================================*/
+.partner-table {
+    margin: 0 auto;
+    
+}
+
+.partner-table th, .partner-table td {
+    padding: 10px 20px 10px 20px;
 }
 
 /*=======================================================================

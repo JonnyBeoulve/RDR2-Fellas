@@ -3,23 +3,23 @@ from django.contrib.auth.models import User
 
 # Tuples for fields with predefined choices
 PLATFORM_CHOICES = (
-    ('ps4', 'PlayStation 4'),
-    ('xbo', 'Xbox One'),
+    ('PlayStation 4', 'PlayStation 4'),
+    ('Xbox One', 'Xbox One'),
 )
 
 GAMERSTYLE_CHOICES = (
-    ('casual', 'Competititor'),
-    ('moderate', 'Moderate'),
-    ('hardcore', 'Hardcore'),
+    ('Casual', 'Competititor'),
+    ('Moderate', 'Moderate'),
+    ('Hardcore', 'Hardcore'),
 )
 
 PLAYSTYLE_CHOICES = (
-    ('adventurer', 'Adventurer'),
-    ('competitor', 'Competititor'),
-    ('hunter', 'Hunter'),
-    ('level_grinder', 'Level Grinder'),
-    ('money_maker', 'Money Maker'),
-    ('royale_fiend', 'Royale Fiend'),
+    ('Adventurer', 'Adventurer'),
+    ('Competitor', 'Competititor'),
+    ('Hunter', 'Hunter'),
+    ('Level Grinder', 'Level Grinder'),
+    ('Money Maker', 'Money Maker'),
+    ('Royale Fiend', 'Royale Fiend'),
 )
 
 # UserProfile model uses default User fields with 3 additional attributes

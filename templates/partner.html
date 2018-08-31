@@ -3,8 +3,29 @@
 
 <div class="container">
   <section class="about">
-    <h2 class="page-title">Partner up</h2>
-    <p>Coming soon...</p>
+    <h2 class="page-title">Partner Up</h2>
+
+    {% if user.is_authenticated %}
+    <table class="partner-table">
+      <tr>
+        <th>ID</th>
+        <th>Platform</th> 
+        <th>Gamerstyle</th>
+        <th>Playstyle</th>
+      </tr>
+      {% for partner in partners %}
+      <tr>
+        <td>{{ partner.gaming_id }}</td>
+        <td>{{ partner.platform }}</td>
+        <td>{{ partner.gamerstyle }}</td>
+        <td>{{ partner.playstyle }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    {% else %}
+    <p>To gain access to this feature, sign up for an account <a href="/register" class="text-link">here</a>.</p>
+    {% endif %}
   </section>
 </div>
 

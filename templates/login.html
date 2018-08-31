@@ -6,9 +6,9 @@
         <form method="post" action="{% url 'login' %}">
           {% csrf_token %}
 
-          <label for="email">Email:</label>
+          <label for="text">Username:</label>
           <br />
-          <input type="text" name="email">
+          <input type="text" name="username">
 
           <br />
           <label for="password">Password:</label>

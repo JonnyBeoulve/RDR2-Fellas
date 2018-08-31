@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rdr2_fellas.forms import UserForm, UserProfileForm
+from rdr2_fellas.models import UserProfile
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -13,9 +14,17 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-# Partner up page
+# Grab a list of users and redirect to partner page
 def partner(request):
-    return render(request, 'partner.html')
+    partner_list = UserProfile.objects.order_by('gaming_id')
+    partner_dict = {'partners':partner_list}
+    return render(request, 'partner.html', context=partner_dict)
+
+# Perform logout for user session
+@login_required
+def user_logout(request):
+    logout(request)
+    return render(request, 'logout.html')
 
 # Process login request / render login page
 def user_login(request):
@@ -23,11 +32,11 @@ def user_login(request):
     if request.method == 'POST':
 
         # Grab form values
-        email = request.POST.get('email')
+        username = request.POST.get('username')
         password = request.POST.get('password')
 
         # Authenticate
-        user = authenticate(email=email, password=password)
+        user = authenticate(username=username, password=password)
 
         if user:
             if user.is_active:
@@ -36,7 +45,6 @@ def user_login(request):
             else:
                 return HttpResponse("Account not active.")
         else:
-            print("Login failed.")
             return HttpResponse("Login failed.")
 
     else:
