@@ -1,33 +1,76 @@
 from django.shortcuts import render
-from rdr2_fellas.forms import UserForm, UserProfileForm
+from rdr2_fellas.forms import UserForm, UserProfileForm, UpdateUserProfileForm
 from rdr2_fellas.models import UserProfile
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
-# Root page
 def home(request):
+    """ This view directs the user to index.html """
+
     return render(request,'index.html')
 
-# About page
 def about(request):
+    """ This view direct the user to about.html """
+
     return render(request, 'about.html')
 
-# Grab a list of users and redirect to partner page
 def partner(request):
+    """ This view grabs a list of users and redirects to partner page """
+
     partner_list = UserProfile.objects.order_by('gaming_id')
     partner_dict = {'partners':partner_list}
     return render(request, 'partner.html', context=partner_dict)
 
-# Perform logout for user session
+def my_profile(request):
+    """ This view lets a user view the information and change it """
+
+    if request.method == 'POST':
+
+        # Grab form data
+        user_form = UserForm(data=request.POST)
+        profile_form = UserProfileForm(data=request.POST)
+
+        # Confirm form validity
+        if user_form.is_valid() and profile_form.is_valid():
+
+            # Set user, hash password, and then save to database
+            user = user_form.save()
+            user.set_password(user.password)
+            user.save()
+
+            # Set profile, create relationship, then save to database
+            profile = profile_form.save(commit=False)
+            profile.user = user
+            profile.save()
+
+            # User is now registered.
+            registered = True
+
+        else:
+            # Print form invalid
+            print(user_form.errors, profile_form.errors)
+
+    else:
+        # Render forms
+        my_profile_form = UpdateUserProfileForm()
+
+    return render(request, 'myprofile.html',
+                          {'my_profile_form':my_profile_form})
+
+
 @login_required
 def user_logout(request):
+    """ This view logs a user out """
+
     logout(request)
     return render(request, 'logout.html')
 
-# Process login request / render login page
 def user_login(request):
+    """ This view processes a login request or renders login.html """
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('home'))
 
     if request.method == 'POST':
 
@@ -50,8 +93,11 @@ def user_login(request):
     else:
         return render(request, 'login.html', {})
 
-# Process registration request / render register page and form
 def user_register(request):
+    """ This view processes registration request or renders register page """
+
+    if request.user.is_authenticated:
+        return HttpResponseRedirect(reverse('home'))
 
     registered = False
 

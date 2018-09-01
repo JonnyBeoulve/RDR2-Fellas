@@ -4,19 +4,18 @@
 {% block body_block %}
   <div class="container">
     <div class="form-div">
+
       {% if registered %}
         <h1>Thank you for registering!</h1>
         <p>You can now login <a href="/login" class="text-link">here</a>.</p>
       {% else %}
         <h1>Register</h1>
-
         <form enctype="multipart/form-data" method="POST">
           {% csrf_token %}
           {{ user_form.as_p }}
           {{ profile_form.as_p }}
           <input class="btn btn-danger btn-lg" type="submit" name="" value="Register">
         </form>
-
       {% endif %}
 
     </div>

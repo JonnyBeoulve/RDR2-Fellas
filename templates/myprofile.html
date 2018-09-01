@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body_block %}
+
+<div class="container">
+  <section class="about">
+    <h2 class="page-title">My Profile</h2>
+    <div class="form-div">
+      <form enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+        {{ my_profile_form.as_p }}
+        <input class="btn btn-danger btn-lg" type="submit" name="" value="Update Profile">
+      </form>
+    <div class="form-div">
+  </section>
+</div>
+
+{% endblock %}
