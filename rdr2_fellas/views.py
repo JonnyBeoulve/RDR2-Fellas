@@ -41,7 +41,7 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request,user)
-                return HttpResponseRedirect(reverse('home'))
+                return HttpResponseRedirect(reverse('partner'))
             else:
                 return HttpResponse("Account not active.")
         else:

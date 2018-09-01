@@ -12,6 +12,8 @@
         <th>Platform</th> 
         <th>Gamerstyle</th>
         <th>Playstyle</th>
+        <th>Time Availability</th>
+        <th>Day Availability</th>
       </tr>
       {% for partner in partners %}
       <tr>
@@ -19,13 +21,15 @@
         <td>{{ partner.platform }}</td>
         <td>{{ partner.gamerstyle }}</td>
         <td>{{ partner.playstyle }}</td>
+        <td>{{ partner.time_availability }}</td>
+        <td>{{ partner.day_availability }}</td>
       </tr>
       {% endfor %}
     </table>
-
     {% else %}
     <p>To gain access to this feature, sign up for an account <a href="/register" class="text-link">here</a>.</p>
     {% endif %}
+
   </section>
 </div>
 

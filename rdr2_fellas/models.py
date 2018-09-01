@@ -8,7 +8,7 @@ PLATFORM_CHOICES = (
 )
 
 GAMERSTYLE_CHOICES = (
-    ('Casual', 'Competititor'),
+    ('Casual', 'Casual'),
     ('Moderate', 'Moderate'),
     ('Hardcore', 'Hardcore'),
 )
@@ -22,16 +22,31 @@ PLAYSTYLE_CHOICES = (
     ('Royale Fiend', 'Royale Fiend'),
 )
 
-# UserProfile model uses default User fields with 3 additional attributes
+TIME_AVAILABILITY_CHOICES = (
+    ('Any Time', 'Any Time'),
+    ('Morning', 'Morning'),
+    ('Noon', 'Noon'),
+    ('Afternoon', 'Afternoon'),
+    ('Evening', 'Evening'),
+)
+
+DAY_AVAILABILITY_CHOICES = (
+    ('Every Day', 'Every Day'),
+    ('Weekdays', 'Weekdays'),
+    ('Weekends', 'Weekends'),
+)
+
+# UserProfile model references User field and contains several customizable attributes
 class UserProfile(models.Model):
 
     # Create relationship and add attributes
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    gaming_id = models.CharField(max_length=16,blank=False)
-    platform = models.CharField(max_length=13, choices=PLATFORM_CHOICES, default='ps4', blank=False)
-    gamerstyle = models.CharField(max_length=13, choices=GAMERSTYLE_CHOICES, default='casual', blank=False)
-    playstyle = models.CharField(max_length=13, choices=PLAYSTYLE_CHOICES, default='adventurer', blank=False)
-    message = models.TextField(max_length=128,blank=False)
+    gaming_id = models.CharField(max_length=16, blank=False)
+    platform = models.CharField(max_length=13, choices=PLATFORM_CHOICES, default='PlayStation 4', blank=False)
+    gamerstyle = models.CharField(max_length=13, choices=GAMERSTYLE_CHOICES, default='Casual', blank=False)
+    playstyle = models.CharField(max_length=13, choices=PLAYSTYLE_CHOICES, default='Adventurer', blank=False)
+    time_availability = models.CharField(max_length=13, choices=TIME_AVAILABILITY_CHOICES, default='Any Time', blank=False)
+    day_availability = models.CharField(max_length=13, choices=DAY_AVAILABILITY_CHOICES, default='Every Day', blank=False)
 
     def __str__(self):
         return self.user.username
